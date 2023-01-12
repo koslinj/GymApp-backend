@@ -8,10 +8,11 @@ class ExerciseActions {
         const reps = req.body.reps;
         const weight = req.body.weight;
         const info = req.body.info;
+        const training_id = req.body.training_id;
 
         let exercise;
         try{
-            exercise = new Exercise({name, sets, reps, weight, info});
+            exercise = new Exercise({name, sets, reps, weight, info, training_id});
             await exercise.save();
         }catch(err){
             return res.status(422).json({message: err.message})
@@ -48,6 +49,7 @@ class ExerciseActions {
         const reps = req.body.reps;
         const weight = req.body.weight;
         const info = req.body.info;
+        const training_id = req.body.training_id;
 
         const exercise = await Exercise.findOne({_id: id})
         exercise.name = name
@@ -55,6 +57,7 @@ class ExerciseActions {
         exercise.reps = reps
         exercise.weight = weight
         exercise.info = info
+        exercise.training_id = training_id
         
         await exercise.save()
 

@@ -18,6 +18,10 @@ const ExerciseSchema = new mongoose.Schema({
     },
     info: {
         type: String
+    },
+    training_id: {
+        type: String,
+        required: true
     }
 });
 
