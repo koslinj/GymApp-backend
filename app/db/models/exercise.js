@@ -22,6 +22,10 @@ const ExerciseSchema = new mongoose.Schema({
     training_id: {
         type: String,
         required: true
+    },
+    when: {
+        type: Date,
+        required: true
     }
 });
 

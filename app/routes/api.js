@@ -3,6 +3,7 @@ const router = express.Router()
 
 const exerciseActions = require('../actions/api/exerciseActions')
 const trainingActions = require('../actions/api/trainingActions')
+const listActions = require('../actions/api/listActions')
 
 // pobieranie wszystkich ćwiczeń z treningu
 router.get('/exercises', exerciseActions.getAllExercises);
@@ -25,5 +26,12 @@ router.post('/trainings', trainingActions.saveTraining);
 router.put('/trainings/:id', trainingActions.updateTraining);
 // usuwanie treningu
 router.delete('/trainings/:id', trainingActions.deleteTraining);
+
+// pobieranie wszystkich nazw ćwiczeń
+router.get('/list', listActions.getList);
+// zapisywanie nowej nazwy ćwiczenia
+router.post('/list', listActions.saveNameToList);
+// usuwanie nazwy ćwiczenia
+router.delete('/list/:id', listActions.deleteNameFromList);
 
 module.exports = router

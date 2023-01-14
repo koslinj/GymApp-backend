@@ -5,7 +5,7 @@ const TrainingSchema = new mongoose.Schema({
         type: String
     },
     when: {
-        type: String,
+        type: Date,
         required: true
     }
 });
